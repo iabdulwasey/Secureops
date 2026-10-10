@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" role="img" aria-labelledby="t d">
+  <title id="t">SecureOps</title>
+  <desc id="d">One console for every client and endpoint. A job that restarted nginx.service on web-prod-01 shows every step it reached, from queued to succeeded with exit code 0, and an AI proposal to restart the Print Spooler on 3 devices waits for a person to approve it.</desc>
+  <defs>
+    <style>
+      .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: 'Geist Mono', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace; }
+      .tnum { font-variant-numeric: tabular-nums; }
+    </style>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.9" fill="#000000" fill-opacity="0.09" />
+    </pattern>
+    <radialGradient id="fade" cx="0.72" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <mask id="grid-mask">
+      <rect width="1000" height="380" fill="url(#fade)" />
+    </mask>
+    <filter id="float" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.05" />
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.09" />
+    </filter>
+    <clipPath id="card-b">
+      <rect x="612" y="206" width="340" height="136" rx="12" />
+    </clipPath>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="999" height="379" rx="16" fill="#fafafa" stroke="#000000" stroke-opacity="0.08" />
+  <rect x="1" y="1" width="998" height="378" rx="16" fill="url(#dots)" mask="url(#grid-mask)" />
+
+  <!-- Mark and wordmark -->
+  <g transform="translate(48 48)">
+    <rect width="40" height="40" rx="10" fill="#4b6cd9" />
+    <path d="M20 9 L29.5 12.6 V19.8 C29.5 25.6 25.4 29.7 20 31.6 C14.6 29.7 10.5 25.6 10.5 19.8 V12.6 Z" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round" />
+    <path d="M15.6 20.4 L18.8 23.6 L24.6 17.4" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="102" y="75.5" class="sans" font-size="22" font-weight="600" letter-spacing="-0.2" fill="#161719">SecureOps</text>
+
+  <!-- Headline -->
+  <text class="sans" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#161719">
+    <tspan x="48" y="152">One console for every</tspan>
+    <tspan x="48" y="198">client and endpoint.</tspan>
+  </text>
+  <text class="sans" font-size="16" fill="#545559">
+    <tspan x="48" y="240">RMM, PSA, MDM, network monitoring, documentation,</tspan>
+    <tspan x="48" y="264">billing and agentic AI, on one tenant-isolated platform.</tspan>
+  </text>
+
+  <!-- Chips -->
+  <g class="sans" font-size="12.5" fill="#545559" text-anchor="middle">
+    <rect x="48.5" y="300.5" width="146" height="27" rx="13.5" fill="#ffffff" stroke="#000000" stroke-opacity="0.1" />
+    <text x="121.5" y="318.5">Self-host or SaaS</text>
+    <rect x="204.5" y="300.5" width="166" height="27" rx="13.5" fill="#ffffff" stroke="#000000" stroke-opacity="0.1" />
+    <text x="287.5" y="318.5">AI scoped per client</text>
+    <rect x="380.5" y="300.5" width="146" height="27" rx="13.5" fill="#ffffff" stroke="#000000" stroke-opacity="0.1" />
+    <text x="453.5" y="318.5">Signed agent jobs</text>
+  </g>
+
+  <!-- Card A: an endpoint action on its real job ladder -->
+  <g filter="url(#float)">
+    <rect x="572.5" y="52.5" width="380" height="132" rx="12" fill="#ffffff" stroke="#000000" stroke-opacity="0.08" />
+  </g>
+  <circle cx="597" cy="79.5" r="4" fill="#258343" />
+  <text x="609" y="84" class="mono" font-size="14" fill="#161719">web-prod-01</text>
+  <text x="932" y="84" class="sans" font-size="13" fill="#6a6c6f" text-anchor="end">Lakeshore Family Clinic, HQ</text>
+  <line x1="573" y1="100.5" x2="952" y2="100.5" stroke="#000000" stroke-opacity="0.06" />
+  <text x="592" y="129" class="sans" font-size="15" font-weight="500" fill="#161719">Restart nginx.service</text>
+  <text x="932" y="129" class="mono tnum" font-size="13" fill="#545559" text-anchor="end">exit 0 · 7.2s</text>
+  <g fill="#258343">
+    <rect x="592" y="144" width="63.2" height="4" rx="2" />
+    <rect x="661.2" y="144" width="63.2" height="4" rx="2" />
+    <rect x="730.4" y="144" width="63.2" height="4" rx="2" />
+    <rect x="799.6" y="144" width="63.2" height="4" rx="2" />
+    <rect x="868.8" y="144" width="63.2" height="4" rx="2" />
+  </g>
+  <g class="sans" font-size="11.5" fill="#6a6c6f">
+    <text x="592" y="168">Queued</text>
+    <text x="661.2" y="168">Sent</text>
+    <text x="730.4" y="168">Acked</text>
+    <text x="799.6" y="168">Executing</text>
+    <text x="868.8" y="168" fill="#196b34">Succeeded</text>
+  </g>
+
+  <!-- Card B: an agent's proposal waiting for a person -->
+  <g filter="url(#float)">
+    <rect x="612.5" y="206.5" width="340" height="136" rx="12" fill="#ffffff" stroke="#000000" stroke-opacity="0.08" />
+  </g>
+  <rect x="612" y="206" width="340" height="2" fill="#8b44c9" clip-path="url(#card-b)" />
+  <rect x="632" y="224" width="7" height="7" rx="1.5" fill="#8b44c9" />
+  <text x="646" y="231" class="sans" font-size="12" fill="#7a37b4">Proposed by the service desk agent</text>
+  <text x="632" y="257" class="sans" font-size="15" font-weight="500" fill="#161719">Restart Print Spooler on 3 devices</text>
+  <text x="632" y="279" class="sans" font-size="12.5" fill="#545559">Blast radius 3 · Confidence high · Reversible</text>
+  <g class="sans" font-size="13" text-anchor="middle">
+    <rect x="632" y="296" width="116" height="28" rx="6" fill="#4b6cd9" />
+    <text x="690" y="314.5" fill="#ffffff">Approve <tspan fill="#ffffff" fill-opacity="0.78">⌘↵</tspan></text>
+    <rect x="756.5" y="296.5" width="74" height="27" rx="6" fill="#ffffff" stroke="#000000" stroke-opacity="0.14" />
+    <text x="793.5" y="314.5" fill="#545559">Modify</text>
+    <rect x="838.5" y="296.5" width="70" height="27" rx="6" fill="#ffffff" stroke="#000000" stroke-opacity="0.14" />
+    <text x="873.5" y="314.5" fill="#545559">Reject</text>
+  </g>
+</svg>

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="468" viewBox="0 0 1000 468" role="img" aria-labelledby="t d">
+  <title id="t">SecureOps architecture</title>
+  <desc id="d">Endpoints (the Go agent, the Rust remote helper and network probes) connect out to the agent gateway over mutual TLS. The gateway validates every frame and bridges to NATS JetStream. The API and the workers work over NATS, with the AI router beside them. People reach the API through the web console, the client portal, the apps and integrations. The workers and the API store data in PostgreSQL under forced row-level security, ClickHouse, VictoriaMetrics and object storage.</desc>
+  <defs>
+    <style>
+      .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .card { fill: #151619; stroke: #ffffff; stroke-opacity: 0.1; }
+      .key { fill: #1c1d20; stroke: #4b6cd9; stroke-opacity: 0.55; }
+      .title { font-size: 14px; font-weight: 600; fill: #edeef0; }
+      .sub { font-size: 12px; fill: #a3a5a8; }
+      .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.1px; fill: #898b8e; }
+      .wire { fill: none; stroke: #898b8e; stroke-opacity: 0.55; stroke-width: 1.25; }
+      .tip { fill: #898b8e; fill-opacity: 0.8; }
+    </style>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0.8 L7 4 L0 7.2 Z" class="tip" />
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="999" height="467" rx="16" fill="#0d0e11" stroke="#ffffff" stroke-opacity="0.1" />
+
+  <!-- Column labels -->
+  <g class="sans eyebrow">
+    <text x="32" y="42">ENDPOINTS</text>
+    <text x="268" y="42">EDGE</text>
+    <text x="460" y="42">CORE</text>
+    <text x="820" y="42">PEOPLE</text>
+    <text x="268" y="372">DATA</text>
+  </g>
+
+  <!-- Endpoints -->
+  <g class="sans">
+    <rect x="32.5" y="56.5" width="196" height="60" rx="10" class="card" />
+    <text x="48" y="82" class="title">Go agent</text>
+    <text x="48" y="101" class="sub">Windows, macOS, Linux</text>
+    <rect x="32.5" y="132.5" width="196" height="60" rx="10" class="card" />
+    <text x="48" y="158" class="title">Remote helper</text>
+    <text x="48" y="177" class="sub">Rust, VP9 desktop</text>
+    <rect x="32.5" y="208.5" width="196" height="60" rx="10" class="card" />
+    <text x="48" y="234" class="title">Network probe</text>
+    <text x="48" y="253" class="sub">SNMP, syslog, flows</text>
+  </g>
+
+  <!-- Endpoints to the gateway: one outbound connection each -->
+  <path d="M229 86.5 H248 M229 162.5 H248 M229 238.5 H248 M248 86.5 V238.5" class="wire" />
+  <path d="M248 162.5 H266" class="wire" marker-end="url(#arrow)" />
+
+  <!-- Edge -->
+  <g class="sans">
+    <rect x="268.5" y="132.5" width="160" height="60" rx="10" class="key" />
+    <text x="284" y="158" class="title">Agent gateway</text>
+    <text x="284" y="177" class="sub">mTLS, frame checks</text>
+  </g>
+  <path d="M431 162.5 H458" class="wire" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+
+  <!-- Core -->
+  <g class="sans">
+    <rect x="460.5" y="56.5" width="320" height="60" rx="10" class="card" />
+    <text x="476" y="82" class="title">API</text>
+    <text x="476" y="101" class="sub">REST, GraphQL, live updates, webhooks</text>
+    <rect x="460.5" y="132.5" width="320" height="60" rx="10" class="key" />
+    <text x="476" y="158" class="title">NATS JetStream</text>
+    <text x="476" y="177" class="sub">transport, events, presence, live updates</text>
+    <rect x="460.5" y="208.5" width="154" height="60" rx="10" class="card" />
+    <text x="476" y="234" class="title">Workers</text>
+    <text x="476" y="253" class="sub">jobs, Temporal</text>
+    <rect x="626.5" y="208.5" width="154" height="60" rx="10" class="card" />
+    <text x="642" y="234" class="title">AI router</text>
+    <text x="642" y="253" class="sub">retrieval, evals</text>
+  </g>
+  <path d="M537.5 117 V132 M537.5 193 V208 M703.5 193 V208" class="wire" />
+
+  <!-- People to the API -->
+  <g class="sans">
+    <rect x="820.5" y="56.5" width="148" height="60" rx="10" class="card" />
+    <text x="836" y="82" class="title">Web console</text>
+    <text x="836" y="101" class="sub">the workspace</text>
+    <rect x="820.5" y="132.5" width="148" height="60" rx="10" class="card" />
+    <text x="836" y="158" class="title">Client portal</text>
+    <text x="836" y="177" class="sub">per-client brand</text>
+    <rect x="820.5" y="208.5" width="148" height="60" rx="10" class="card" />
+    <text x="836" y="234" class="title">Apps</text>
+    <text x="836" y="253" class="sub">mobile, tray, Teams</text>
+    <rect x="820.5" y="284.5" width="148" height="60" rx="10" class="card" />
+    <text x="836" y="310" class="title">Integrations</text>
+    <text x="836" y="329" class="sub">SDKs, MCP, iPaaS</text>
+  </g>
+  <path d="M820 86.5 H800 M820 162.5 H800 M820 238.5 H800 M820 314.5 H800 M800 86.5 V314.5" class="wire" />
+  <path d="M800 86.5 H783" class="wire" marker-end="url(#arrow)" />
+
+  <!-- Core to data -->
+  <path d="M620.5 196 V348 M351 348 H885 M351 348 V380 M529 348 V380 M707 348 V380 M885 348 V380" class="wire" />
+  <g class="tip">
+    <path d="M347 378 L351 385 L355 378 Z" />
+    <path d="M525 378 L529 385 L533 378 Z" />
+    <path d="M703 378 L707 385 L711 378 Z" />
+    <path d="M881 378 L885 385 L889 378 Z" />
+  </g>
+
+  <!-- Data -->
+  <g class="sans">
+    <rect x="268.5" y="386.5" width="166" height="56" rx="10" class="key" />
+    <text x="284" y="410" class="title">PostgreSQL</text>
+    <text x="284" y="428" class="sub">forced row-level security</text>
+    <rect x="446.5" y="386.5" width="166" height="56" rx="10" class="card" />
+    <text x="462" y="410" class="title">ClickHouse</text>
+    <text x="462" y="428" class="sub">events, warehouse</text>
+    <rect x="624.5" y="386.5" width="166" height="56" rx="10" class="card" />
+    <text x="640" y="410" class="title">VictoriaMetrics</text>
+    <text x="640" y="428" class="sub">metrics</text>
+    <rect x="802.5" y="386.5" width="166" height="56" rx="10" class="card" />
+    <text x="818" y="410" class="title">Object storage</text>
+    <text x="818" y="428" class="sub">S3 or MinIO</text>
+  </g>
+
+  <!-- A note on the left of the data row -->
+  <g class="sans">
+    <text x="32" y="306" class="sub">
+      <tspan x="32" dy="0">Every device dials out once,</tspan>
+      <tspan x="32" dy="17">over TLS or WebSocket on 443.</tspan>
+      <tspan x="32" dy="17">No inbound firewall rule.</tspan>
+    </text>
+  </g>
+</svg>
