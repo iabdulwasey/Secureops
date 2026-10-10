@@ -2403,7 +2403,7 @@ pnpm db:migrate
 pnpm dev              # the web app on :3000, the API on :4000, and the worker
 ```
 
-Open [localhost:3000](http://localhost:3000), choose **Start free**, then **Explore with sample data**: a workspace with three clients, their devices, tickets, alerts, projects, quotes and a network is ready in a second or two.
+Open [localhost:3000](http://localhost:3000), choose **Start free**, then **Explore with sample data**: a workspace with ten businesses and six months of their history, their devices, tickets, alerts, projects, quotes and invoices referring to one another, so every page and chart is filled. Settings, Sample data keeps adding the latest activity every 15 minutes while it is on.
 
 **The checks every change passes**
 
@@ -2416,7 +2416,7 @@ pnpm check:em-dash && pnpm check:migrations && pnpm check:deploy && pnpm check:s
 (cd agent && go test ./...) && (cd apps/agent-gateway && go test ./...)
 ```
 
-More than 4,000 tests across the TypeScript suites, every Go package of the agent and the gateway, 268 forward-only migrations, and a live check of every feature against real devices or a stand-in speaking each vendor's protocol.
+More than 4,000 tests across the TypeScript suites, every Go package of the agent and the gateway, 270 forward-only migrations, and a live check of every feature against real devices or a stand-in speaking each vendor's protocol.
 
 ## Repository layout
 
